@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "concurrently --names surreal,nuxt \"pnpm run dev:surreal\" \"pnpm run dev:nuxt\"",
+    "dev:surreald": "surreal start --allow-all --auth --user root --pass root -l trace --bind 0.0.0.0:3001",
+    "dev:surreal": "concurrently --names surreal,surrealinit \"pnpm run dev:surreald\" \"sleep 1 ; _script/import_surql.sh\"",
+    "dev:nuxt": "nuxt dev",
+    "dev:prepare": "nuxt prepare",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4",
+    "nuxt-oidc-auth": "^0.12.0",
+    "surrealdb.js": "1.0.0-beta.18",
+    "vue": "latest"
+  },
+  "packageManager": "pnpm@9.7.1+sha512.faf344af2d6ca65c4c5c8c2224ea77a81a5e8859cbc4e06b1511ddce2f0151512431dd19e6aff31f2c6a8f5f2aced9bd2273e1fed7dd4de1868984059d2c4247",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
