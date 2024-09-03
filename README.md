@@ -87,11 +87,11 @@ Add that scope to the prover.
 
 ## Running the app
 
-Run the app with `npm run dev` to start the nuxt app and SurrealDB. You can use `npm run dev:nuxt` and `npm run dev:surrealdb` separately if you prefer. The default address of the Nuxt app should be `http://localhost:3000`.
+Run the app with `npm run dev` to start the nuxt app and SurrealDB. You can use `npm run dev:nuxt` and `npm run dev:surreal` separately if you prefer. The default address of the Nuxt app should be `http://localhost:3000`.
 
 When you run it, open the JavaScript console to see more about what's going on. You may also follow the output of your SurrealDB log.
 
-If authentication is performed successfully the user will be added if not found in the database. Otherwise it's record will be pulled. Note that another test user created by importing the surql file will not be shown in the result (browser console) despite the query not limiting output. This is done by the permissions set in the database itself.
+If authentication is performed successfully the user will be added if not found in the database. Else it's record will be pulled. Note that another test user created by importing the surql file will not be shown in the result (browser console) despite the query not limiting output. This is done by the permissions set in the database itself.
 
 ## In depth
 
